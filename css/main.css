@@ -19,8 +19,7 @@ body {
     flex-wrap: wrap;
 }
 
-
-.grid.div {
+.grid div {
     display: block;
     padding: 5px;
     border: 1px solid #ffffff;

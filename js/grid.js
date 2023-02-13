@@ -1,19 +1,24 @@
 // generate divs with id "cell"
 let grid = document.querySelector(".grid");
-var count = 0;
-for (let i = 0; i < 368; i++) {
+let count = 0;
+for (let i = 0; i < 367; i++) {
   let div = document.createElement("div");
   if (count == 0) {div.setAttribute("is_left", "true")}
   if (count == 22) {div.setAttribute("is_right", "true")}
   // add attribute is_left every 22 divs
-  console.log(i);
   grid.appendChild(div);
   count++;
-  if (count == 23)
+  console.log("count " + count);
+  console.log("i " + i);
+  if (count == 23) {
     count = 0;
+  }
+  if (i === 366) {
+    count = count + 1;
+    console.log("count 2 " + count);
+    div.setAttribute("is_right", "true");
+  }
 }
-
-
 
 // add a player to the grid
 // create a movable object
