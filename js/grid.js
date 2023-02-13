@@ -12,16 +12,19 @@ for (let i = 0; i < 240; i++) {
   if (count == 20) {count = 0}
 }
 
-// if we hover over a cell, change the color and console log the i value
+// if we hover over a cell and click, it will tell us its position in the grid from 1-240
 let cells = document.querySelectorAll(".grid div");
 let currentCell = 0;
-cells.forEach((cell) => {
-    cell.addEventListener("mouseover", () => {
-        cell.style.background = "black";
-        console.log(currentCell);
+for (let i = 0; i < cells.length; i++) {
+    cells[i].addEventListener("mouseover", function () {
+        currentCell = i;
     });
-    currentCell++;
-});
+    cells[i].addEventListener("click", function () {
+        console.log("Cell number : " + currentCell);
+
+    });
+}
+
 
 // listen for keyboard input
 document.addEventListener("keydown", function (event) {
