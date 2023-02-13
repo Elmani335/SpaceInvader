@@ -12,6 +12,17 @@ for (let i = 0; i < 240; i++) {
   if (count == 20) {count = 0}
 }
 
+// if we hover over a cell, change the color and console log the i value
+let cells = document.querySelectorAll(".grid div");
+let currentCell = 0;
+cells.forEach((cell) => {
+    cell.addEventListener("mouseover", () => {
+        cell.style.background = "black";
+        console.log(currentCell);
+    });
+    currentCell++;
+});
+
 // listen for keyboard input
 document.addEventListener("keydown", function (event) {
   if (event.key === "ArrowLeft") {
