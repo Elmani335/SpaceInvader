@@ -11,10 +11,10 @@ body {
 
 .grid {
     display: flex;
-    margin: 0 auto;
+    margin: auto auto;
     border: 1px solid #ffffff;
-    width: 840px;
-    height: 600px;
+    width: 70em;
+    height: 50em;
     background: #000000;
     flex-wrap: wrap;
 }
