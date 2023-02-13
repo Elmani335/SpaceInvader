@@ -11,12 +11,10 @@ body {
 
 .grid {
     display: flex;
-    margin: auto auto;
+    margin: auto;
     border: 1px solid #ffffff;
-    width: 70em;
-    -webkit-column-width: 70em;
-    height: 50em;
-    -webkit-column-height: 50em;
+    width: 90%;
+    height: 50%;
     background: #000000;
     flex-wrap: wrap;
 }
@@ -25,10 +23,23 @@ body {
     display: block;
     padding: 5px;
     border: 1px solid #ffffff;
-    width: 25px;
-    height: 25px;
+    width: calc(100% / 23);
+    height: calc(100% / 16);
     background: #0000ff;
 }
+
+@media screen and (min-width: 768px) {
+    .grid {
+        width: 70em;
+        height: 50em;
+    }
+
+    .grid div {
+        width: 25px;
+        height: 25px;
+    }
+}
+
 
 #cell.invader {
     display: block;
