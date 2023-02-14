@@ -28,18 +28,11 @@ body {
     background: #0000ff;
 }
 
-#cell.invader {
-    display: block;
-    width: 25px;
-    height: 25px;
-    background: #ffff00;
-}
 
-
-.object {
+div .object {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #ffff00;
+    width: 20px;
+    height: 20px;
+    background: #ff0013;
 }
 
