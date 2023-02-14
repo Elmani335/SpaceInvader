@@ -44,7 +44,9 @@ div .object {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #ff0013;
+    background-image: url('../ressources/ship.png');
+    background-position: center;
+    background-size: cover;
 }
 
 div .object.invader {
