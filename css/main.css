@@ -1,15 +1,25 @@
 
 body {
-    background-color: #000000;
+    background-image: linear-gradient( 135deg, #8a1da2 10%, #400760 100%);
     color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    margin: 0;
+    padding: 100px;
+}
+
+body h1 {
+    font-size: 50px;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
-
 .grid {
+    padding-top: 30px;
     display: flex;
     margin: auto auto;
     border: 1px solid #ffffff;
@@ -21,11 +31,12 @@ body {
 
 .grid div {
     display: block;
+    margin-top: 1px;
     padding: 5px;
-    border: 1px solid #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0);
     width: 20px;
     height: 20px;
-    background: #0000ff;
+    background: rgba(0, 0, 0, 0);
 }
 
 
@@ -34,5 +45,14 @@ div .object {
     width: 20px;
     height: 20px;
     background: #ff0013;
+}
+
+div .object.invader {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('../ressources/main.gif');
+    background-position: center;
+    background-size: cover;
 }
 

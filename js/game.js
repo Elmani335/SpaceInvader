@@ -4,7 +4,7 @@ player.classList.add("object");
 grid.appendChild(player);
 
 // set the initial position of the player
-let playerPos = 0;
+let playerPos = 229;
 player.style.left = cells[playerPos].offsetLeft + "px";
 player.style.top = cells[playerPos].offsetTop + "px";
 
