@@ -21,10 +21,12 @@ document.addEventListener("keydown", function (event) {
             cells[playerPos].classList.add("player");
         }
     } else if (event.key == "ArrowUp") {
-        if (playerPos - 20 >= 0) {
-            cells[playerPos].classList.remove("player");
-            playerPos -= 20;
-            cells[playerPos].classList.add("player");
+        if (playerPos >= 200 && playerPos < 240) {
+            if (playerPos - 20 >= 0) {
+                cells[playerPos].classList.remove("player");
+                playerPos -= 20;
+                cells[playerPos].classList.add("player");
+            }
         }
     } else if (event.key == "ArrowDown") {
         if (playerPos + 20 < 240) {
@@ -60,7 +62,9 @@ setInterval(function () {
         if (cells[i].classList.contains("bullet") && cells[i].classList.contains("invader")) {
             cells[i].classList.remove("bullet");
             cells[i].classList.remove("invader");
+            alienInvaders.splice(alienInvaders.indexOf(i), 1);
+            console.log(alienInvaders);
             score++;
         }
     }
-} , 100);
+}, 100);
