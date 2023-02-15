@@ -1,6 +1,7 @@
 // console.log(cells.length);
 let playerPos = 230;
 var score = 0;
+let cooldown = false;
 
 // Create player's ship
 cells[playerPos].classList.add("player");
@@ -40,8 +41,16 @@ document.addEventListener("keydown", function (event) {
 // Press space to fire bullet
 document.addEventListener("keydown", function (event) {
     if (event.key === " ") {
-        var bulletPos = playerPos - 20;
-        cells[bulletPos].classList.add("bullet");
+        if (!cooldown) {
+            var bulletPos = playerPos - 20;
+            cells[bulletPos].classList.add("bullet");
+            cooldown = true;
+            setTimeout(function () {
+                cooldown = false;
+            }, 500);
+        }
+        else
+            return;
     }
 });
 
@@ -63,8 +72,18 @@ setInterval(function () {
             cells[i].classList.remove("bullet");
             cells[i].classList.remove("invader");
             alienInvaders.splice(alienInvaders.indexOf(i), 1);
-            console.log(alienInvaders);
+            cells[i].classList.add("boom");
+            setTimeout(function () {
+                cells[i].classList.remove("boom");
+            }, 500);
             score++;
+        }
+        if (cells[i].classList.contains("player") && cells[i].classList.contains("invader")) {
+            cells[i].classList.remove("player");
+            cells[i].classList.remove("invader");
+            cells[i].classList.add("boom");
+            alert("Game Over");
+            location.reload();
         }
     }
 }, 100);
