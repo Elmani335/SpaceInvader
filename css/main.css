@@ -1,3 +1,4 @@
+
 body {
     background-image: linear-gradient( 135deg, #8a1da2 10%, #400760 100%);
     color: #ffffff;
@@ -58,9 +59,7 @@ body {
     background: rgba(0, 0, 0, 0);
 }
 
-
-div .object {
-    position: absolute;
+div .player {
     width: 20px;
     height: 20px;
     background-image: url('../ressources/ship.png');
@@ -68,7 +67,7 @@ div .object {
     background-size: cover;
 }
 
-div .object.invader {
+div .invader {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -113,4 +112,11 @@ div .object.invader {
 .button:hover {
     color: #fff;
     background-color: #000;
+}
+
+div .bullet {
+    background-image: url('../ressources/lazer.png');
+    transform: rotate(-90deg);
+    background-position: center;
+    background-size: cover;
 }
