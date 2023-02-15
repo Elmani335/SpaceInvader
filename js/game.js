@@ -47,7 +47,7 @@ document.addEventListener("keydown", function (event) {
             cooldown = true;
             setTimeout(function () {
                 cooldown = false;
-            }, 500);
+            }, 100);
         }
         else
             return;
@@ -72,11 +72,11 @@ setInterval(function () {
             cells[i].classList.remove("bullet");
             cells[i].classList.remove("invader");
             alienInvaders.splice(alienInvaders.indexOf(i), 1);
+            score = score + 100;
             cells[i].classList.add("boom");
             setTimeout(function () {
                 cells[i].classList.remove("boom");
             }, 500);
-            score++;
         }
         if (cells[i].classList.contains("player") && cells[i].classList.contains("invader")) {
             cells[i].classList.remove("player");

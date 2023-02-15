@@ -58,4 +58,4 @@ setInterval(function () {
     for (let i = 0; i < alienInvaders.length; i++) {
         cells[alienInvaders[i]].classList.add('invader');
     }
-}, 100);
+}, 200);
