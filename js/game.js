@@ -1,5 +1,6 @@
 // console.log(cells.length);
 let playerPos = 230;
+var score = 0;
 
 // Create player's ship
 cells[playerPos].classList.add("player");
@@ -53,12 +54,13 @@ setInterval(function () {
     }
 }, 100);
 
-// colision detection
+// collision detection
 setInterval(function () {
     for (let i = 0; i < 240; i++) {
         if (cells[i].classList.contains("bullet") && cells[i].classList.contains("invader")) {
             cells[i].classList.remove("bullet");
             cells[i].classList.remove("invader");
+            score++;
         }
     }
 } , 100);
