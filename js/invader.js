@@ -6,12 +6,12 @@ while (i < 16) {
     i++;
 }
 i += 8;
-while (i < 16 + 20) {
+while (i < 36) {
     cells[i].classList.add("invader");
     i++;
 }
 i += 8;
-while (i < 26 + 20) {
+while (i < 56) {
     cells[i].classList.add("invader");
     i++;
 }
