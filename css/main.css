@@ -59,6 +59,12 @@ body {
     background: rgba(0, 0, 0, 0);
 }
 
+div .boom {
+    background-image: url('../ressources/boom_1.png');
+    background-position: center;
+    background-size: cover;
+}
+
 div .player {
     width: 20px;
     height: 20px;
@@ -119,3 +125,4 @@ div .bullet {
     background-position: center;
     background-size: cover;
 }
+
