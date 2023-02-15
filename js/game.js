@@ -52,3 +52,13 @@ setInterval(function () {
         }
     }
 }, 100);
+
+// colision detection
+setInterval(function () {
+    for (let i = 0; i < 240; i++) {
+        if (cells[i].classList.contains("bullet") && cells[i].classList.contains("invader")) {
+            cells[i].classList.remove("bullet");
+            cells[i].classList.remove("invader");
+        }
+    }
+} , 100);
