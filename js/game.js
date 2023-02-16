@@ -82,15 +82,12 @@ setInterval(function () {
             cells[i].classList.remove("player");
             cells[i].classList.remove("invader");
             cells[i].classList.add("boom");
-            }
-                    }
+        }
         if (cells[i].classList.contains("invader_bullet") && cells[i].classList.contains("player")) {
             cells[i].classList.remove("invader_bullet");
             cells[i].classList.remove("player");
             cells[i].classList.add("boom");
         }
-                    location.reload();
-
     }
 }, updateTick);
 
@@ -101,6 +98,5 @@ setInterval(function () {
             location.reload();
         }
     }
-}
-    , 100);
+}, 100);
 
