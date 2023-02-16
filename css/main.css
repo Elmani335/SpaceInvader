@@ -101,7 +101,6 @@ div .invader {
 
 .button {
     font-family: Bahnschrift;
-    ;
     background-color: #fff;
     color: #000;
     border: none;
@@ -114,6 +113,19 @@ div .invader {
     transition: 500ms;
 }
 
+#stopButton {
+    font-family: Bahnschrift;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 500ms;
+}
 
 .button:hover {
     color: #fff;

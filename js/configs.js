@@ -7,12 +7,12 @@ var intervalIDs = [];
 
 // Player's Configs
 
-var playerBulletSpeed = 500;
+var playerBulletSpeed = 300;
 var playerFireRate = 1000;
 
 // Invader's Configs
 
-var invaderBulletSpeed = 500;
-var invaderFireRate = 500;
-var invaderMoveSpeed = 500;
+var invaderBulletSpeed = 300;
+var invaderFireRate = 1000;
+var invaderMoveSpeed = 400;
 var invaderBulletCooldown = 2000;

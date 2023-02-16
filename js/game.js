@@ -79,18 +79,25 @@ let ft_updateTick = setInterval(function () {
                 cells[i].classList.remove("boom");
             }, 500);
         }
+        //Game over if invader reaches the bottom
+        if (cells[i].classList.contains("invader") && i >= 220) {
+            showGameOverPopup(score);
+            clearAllIntervals();
+        }
+        //Game over if player is hit by invader
         if (cells[i].classList.contains("player") && cells[i].classList.contains("invader")) {
             cells[i].classList.remove("player");
             cells[i].classList.remove("invader");
             cells[i].classList.add("boom");
+            showGameOverPopup(score);
+            clearAllIntervals();
         }
+        //Game over if player is hit by invader bullet
         if (cells[i].classList.contains("invader_bullet") && cells[i].classList.contains("player")) {
             cells[i].classList.remove("invader_bullet");
             cells[i].classList.remove("player");
             cells[i].classList.add("boom");
             console.log("Hit");
-            // reload the page
-            // location.reload();
             showGameOverPopup(score);
             clearAllIntervals();
         }
@@ -98,26 +105,18 @@ let ft_updateTick = setInterval(function () {
 }, updateTick);
 intervalIDs.push(ft_updateTick);
 
-// if there is an invader between 220 and 239, the game is over
-let ft_invaderAtBottom = setInterval(function () {
-    for (let i = 220; i < 240; i++) {
-        if (cells[i].classList.contains("invader")) {
-            location.reload();
-        }
-    }
-}, 100);
-intervalIDs.push(ft_invaderAtBottom);
-
-// Clear all intervals
+// Clear all intervals function
 function clearAllIntervals() {
     for (let i = 0; i < intervalIDs.length; i++) {
         clearInterval(intervalIDs[i]);
     }
 }
 
+//Popup when game is over
 const gameOverPopup = document.getElementById("gameOverPopup");
 const finalScoreElement = document.getElementById("finalScore");
 const playAgainButton = document.getElementById("playAgainButton");
+const stopButton = document.getElementsByClassName("stopButton");
 
 function showGameOverPopup(score) {
     finalScoreElement.innerText = score;
@@ -128,4 +127,9 @@ playAgainButton.addEventListener("click", () => {
     // Restart the game here
     gameOverPopup.style.display = "none";
     location.reload();
+});
+
+stopButton.addEventListener("click", () => {
+    showGameOverPopup(score);
+    clearAllIntervals();
 });
