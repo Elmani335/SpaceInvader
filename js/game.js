@@ -55,7 +55,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 // Move bullet
-setInterval(function () {
+let ft_playerBulletSpeed = setInterval(function () {
     for (let i = 0; i < 240; i++) {
         if (cells[i].classList.contains("bullet")) {
             cells[i].classList.remove("bullet");
@@ -64,9 +64,10 @@ setInterval(function () {
         }
     }
 }, playerBulletSpeed);
+intervalIDs.push(ft_playerBulletSpeed);
 
 // collision detection
-setInterval(function () {
+let ft_updateTick = setInterval(function () {
     for (let i = 0; i < 240; i++) {
         if (cells[i].classList.contains("bullet") && cells[i].classList.contains("invader")) {
             cells[i].classList.remove("bullet");
@@ -89,17 +90,42 @@ setInterval(function () {
             cells[i].classList.add("boom");
             console.log("Hit");
             // reload the page
-            location.reload();
+            // location.reload();
+            showGameOverPopup(score);
+            clearAllIntervals();
         }
     }
 }, updateTick);
+intervalIDs.push(ft_updateTick);
 
 // if there is an invader between 220 and 239, the game is over
-setInterval(function () {
+let ft_invaderAtBottom = setInterval(function () {
     for (let i = 220; i < 240; i++) {
         if (cells[i].classList.contains("invader")) {
             location.reload();
         }
     }
 }, 100);
+intervalIDs.push(ft_invaderAtBottom);
 
+// Clear all intervals
+function clearAllIntervals() {
+    for (let i = 0; i < intervalIDs.length; i++) {
+        clearInterval(intervalIDs[i]);
+    }
+}
+
+const gameOverPopup = document.getElementById("gameOverPopup");
+const finalScoreElement = document.getElementById("finalScore");
+const playAgainButton = document.getElementById("playAgainButton");
+
+function showGameOverPopup(score) {
+    finalScoreElement.innerText = score;
+    gameOverPopup.style.display = "flex";
+}
+
+playAgainButton.addEventListener("click", () => {
+    // Restart the game here
+    gameOverPopup.style.display = "none";
+    location.reload();
+});

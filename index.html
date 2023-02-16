@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Space Invader</title>
@@ -8,39 +9,49 @@
 
 <body>
 
-<div class="game">
-    <h1>T</h1>
-</div>
-<div class="parent">
-
-    <div class="under-parent">
-<div class="title">
-    <button class="button">START</button>
-    <button class="button">STOP</button>
-</div>
-<div class="stats">
-    <div>
-        Score: <span id="score">0</span>
+    <div class="game">
+        <h1>T</h1>
     </div>
-</div>
+    <div class="parent">
+
+        <div class="under-parent">
+            <div class="title">
+                <button class="button">START</button>
+                <button class="button">STOP</button>
+            </div>
+            <div class="stats">
+                <div>
+                    Score: <span id="score">0</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid">
+        </div>
+
+        <div class="score-table">
+            <h2>Score Table</h2>
+            <ul id="scoreList"></ul>
+        </div>
+
+        <div class="popup" id="gameOverPopup">
+            <div class="popup-content">
+                <h2 class="GameOverTitle">Game Over!</h2>
+                <p>Your final score was <span id="finalScore"></span></p>
+                <button id="playAgainButton">Play Again</button>
+            </div>
+        </div>
+
+
     </div>
 
-
-<div class="grid">
-</div>
-
-<div class="score-table">
-    <h2>Score Table</h2>
-    <ul id="scoreList"></ul>
-</div>
-
-</div>
-
-<script src="js/configs.js"></script>
-<script src="js/grid.js"></script>
-<script src="js/invader.js"></script>
-<script src="js/game.js"></script>
-<script src="js/score.js"></script>
+    <script src="js/configs.js"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/invader.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/score.js"></script>
 
 </body>
+
 </html>

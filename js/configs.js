@@ -2,6 +2,9 @@
 
 var updateTick = 100;
 
+// Store interval IDs in an array
+var intervalIDs = [];
+
 // Player's Configs
 
 var playerBulletSpeed = 500;
