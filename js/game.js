@@ -87,6 +87,9 @@ setInterval(function () {
             cells[i].classList.remove("invader_bullet");
             cells[i].classList.remove("player");
             cells[i].classList.add("boom");
+            console.log("Hit");
+            // reload the page
+            location.reload();
         }
     }
 }, updateTick);
