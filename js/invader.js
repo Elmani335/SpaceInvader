@@ -58,4 +58,30 @@ setInterval(function () {
     for (let i = 0; i < alienInvaders.length; i++) {
         cells[alienInvaders[i]].classList.add('invader');
     }
-}, 200);
+}, invaderMoveSpeed);
+
+
+// Invader Shoot Bullet
+
+let lastInvaderBulletTime = 0;
+let invaderFire = setInterval(function () {
+    let currentTime = Date.now();
+    if (currentTime - lastInvaderBulletTime >= invaderBulletCooldown) {
+        let randomInvader = alienInvaders[Math.floor(Math.random() * alienInvaders.length)];
+        let invaderBulletPos = randomInvader + 20;
+        cells[invaderBulletPos].classList.add("invader_bullet");
+        lastInvaderBulletTime = currentTime;
+
+        let invaderBulletMove = setInterval(function () {
+            if (cells[invaderBulletPos].classList.contains("invader_bullet")) {
+                cells[invaderBulletPos].classList.remove("invader_bullet");
+                if (invaderBulletPos + 20 < 240)
+                    cells[invaderBulletPos + 20].classList.add("invader_bullet");
+                else
+                    clearInterval(invaderBulletMove); // Stop bullet movement at bottom row
+                invaderBulletPos += 20;
+            }
+        }, invaderBulletSpeed);
+    }
+}, invaderFireRate);
+

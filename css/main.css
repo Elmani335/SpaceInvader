@@ -60,6 +60,13 @@ div .boom {
     background-size: cover;
 }
 
+div .invader_bullet {
+    background-image: url('../ressources/invader_lazer.png');
+    /* transform: rotate(90deg); */
+    background-position: center;
+    background-size: cover; 
+}
+
 div .player {
     width: 20px;
     height: 20px;
@@ -116,8 +123,7 @@ div .invader {
 
 div .bullet {
     background-image: url('../ressources/lazer.png');
-    transform: rotate(-90deg);
+    /* transform: rotate(-90deg); */
     background-position: center;
     background-size: cover;
 }
-
