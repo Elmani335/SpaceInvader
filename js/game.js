@@ -82,8 +82,17 @@ setInterval(function () {
             cells[i].classList.remove("player");
             cells[i].classList.remove("invader");
             cells[i].classList.add("boom");
-            alert("Game Over");
             location.reload();
         }
     }
 }, 100);
+
+// if there is an invader between 220 and 239, the game is over
+setInterval(function () {
+    for (let i = 220; i < 240; i++) {
+        if (cells[i].classList.contains("invader")) {
+            location.reload();
+        }
+    }
+}
+    , 100);

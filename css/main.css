@@ -12,7 +12,16 @@ body {
     align-items: center;
 }
 
+.under-parent {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .title {
+    margin: 0 auto;
     padding-top: 10px;
     padding-bottom: 20px;
     border-radius: 20px;
@@ -25,6 +34,7 @@ body {
 }
 
 .stats {
+    margin: 0 auto;
     padding-top: 10px;
     margin-top: 20px;
     border-radius: 20px;
@@ -36,8 +46,14 @@ body {
     margin-bottom: 30px;
 }
 
+.parent {
+    width: 90%;
+}
+
 .grid {
     display: flex;
+    float: right;
+    margin-right: 10%;
     border: 1px solid #ffffff;
     width: 440px;
     height: 280px;
@@ -120,4 +136,43 @@ div .bullet {
     background-position: center;
     background-size: cover;
 }
+
+
+
+
+.score-table {
+    float: left;
+    margin-left: 20%;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    width: 300px;
+    max-height: 480px;
+    padding: 10px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 20px #ffffff;
+}
+
+.score-table h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+#scoreList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+#scoreList li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
 
