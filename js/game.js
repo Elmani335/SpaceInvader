@@ -82,11 +82,25 @@ setInterval(function () {
             cells[i].classList.remove("player");
             cells[i].classList.remove("invader");
             cells[i].classList.add("boom");
-        }
+            }
+                    }
         if (cells[i].classList.contains("invader_bullet") && cells[i].classList.contains("player")) {
             cells[i].classList.remove("invader_bullet");
             cells[i].classList.remove("player");
             cells[i].classList.add("boom");
         }
+                    location.reload();
+
     }
 }, updateTick);
+
+// if there is an invader between 220 and 239, the game is over
+setInterval(function () {
+    for (let i = 220; i < 240; i++) {
+        if (cells[i].classList.contains("invader")) {
+            location.reload();
+        }
+    }
+}
+    , 100);
+
