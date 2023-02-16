@@ -47,7 +47,7 @@ document.addEventListener("keydown", function (event) {
             cooldown = true;
             setTimeout(function () {
                 cooldown = false;
-            }, 100);
+            }, playerFireRate);
         }
         else
             return;
@@ -63,7 +63,7 @@ setInterval(function () {
                 cells[i - 20].classList.add("bullet");
         }
     }
-}, 100);
+}, playerBulletSpeed);
 
 // collision detection
 setInterval(function () {
@@ -82,10 +82,17 @@ setInterval(function () {
             cells[i].classList.remove("player");
             cells[i].classList.remove("invader");
             cells[i].classList.add("boom");
-            location.reload();
+            }
+                    }
+        if (cells[i].classList.contains("invader_bullet") && cells[i].classList.contains("player")) {
+            cells[i].classList.remove("invader_bullet");
+            cells[i].classList.remove("player");
+            cells[i].classList.add("boom");
         }
+                    location.reload();
+
     }
-}, 100);
+}, updateTick);
 
 // if there is an invader between 220 and 239, the game is over
 setInterval(function () {
@@ -96,3 +103,4 @@ setInterval(function () {
     }
 }
     , 100);
+
