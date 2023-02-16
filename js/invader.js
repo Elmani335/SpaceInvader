@@ -1,3 +1,15 @@
+// get start button element
+const startButton = document.getElementById('start-button');
+
+// add event listener to start button
+startButton.addEventListener('click', startGame);
+var isstart = false;
+function startGame() {
+
+    isstarted = true;
+
+}
+
 // Create 36 invaders in a 12x3 in middle of cells
 let i = 4;
 var alienInvaders = [];
@@ -21,42 +33,43 @@ let ft_invaderMoveSpeed = setInterval(function () {
     
     for (let i = 0; i < alienInvaders.length; i++) {
 
-        if (cells[alienInvaders[i]].getAttribute('is_right') === 'true') {
+        if (cells[alienInvaders[i]].getAttribute('is_right') === 'true' && isstarted) {
             if (descendreRight) {
                 direction = 20;
                 descendreRight = false;
                 break;
             }
-            else if (descendreRight === false) {
+            else if (descendreRight === false && isstarted) {
                 direction = -1;
                 descendreRight = true;
                 break;
             }
         } 
-        if (cells[alienInvaders[i]].getAttribute('is_left') === 'true') {
+        if (cells[alienInvaders[i]].getAttribute('is_left') === 'true' && isstarted) {
             if (descendreLeft) {
                 direction = 20;
                 descendreLeft = false;
                 break;
             }
-            else if (descendreLeft === false) {
+            else if (descendreLeft === false && isstarted) {
                 direction = 1;
                 descendreLeft = true;
                 break;
             }
         }
     }
+    if (isstarted === true) {
+        for (let i = 0; i < alienInvaders.length; i++) {
+            cells[alienInvaders[i]].classList.remove('invader');
+        }
 
-    for (let i = 0; i < alienInvaders.length; i++) {
-        cells[alienInvaders[i]].classList.remove('invader');
-    }
+        for (let i = 0; i < alienInvaders.length; i++) {
+            alienInvaders[i] += direction;
+        }
 
-    for (let i = 0; i < alienInvaders.length; i++) {
-        alienInvaders[i] += direction;
-    }
-
-    for (let i = 0; i < alienInvaders.length; i++) {
-        cells[alienInvaders[i]].classList.add('invader');
+        for (let i = 0; i < alienInvaders.length; i++) {
+            cells[alienInvaders[i]].classList.add('invader');
+        }
     }
 }, invaderMoveSpeed);
 intervalIDs.push(ft_invaderMoveSpeed);
@@ -67,7 +80,7 @@ intervalIDs.push(ft_invaderMoveSpeed);
 let lastInvaderBulletTime = 0;
 let ft_invaderFireRate = setInterval(function () {
     let currentTime = Date.now();
-    if (currentTime - lastInvaderBulletTime >= invaderBulletCooldown) {
+    if (currentTime - lastInvaderBulletTime >= invaderBulletCooldown && isstarted) {
         let randomInvader = alienInvaders[Math.floor(Math.random() * alienInvaders.length)];
         let invaderBulletPos = randomInvader + 20;
         cells[invaderBulletPos].classList.add("invader_bullet");

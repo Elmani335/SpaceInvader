@@ -6,22 +6,32 @@ let cooldown = false;
 // Create player's ship
 cells[playerPos].classList.add("player");
 
+
+// add event listener to start button
+startButton.addEventListener('click', startGame);
+var isstart = false;
+function startGame() {
+    // remove start button
+    isstarted = true;
+
+}
+
 // move player's ship
 document.addEventListener("keydown", function (event) {
     cells[playerPos].classList.add("player");
-    if (event.key === "ArrowLeft") {
+    if (event.key === "ArrowLeft" && isstarted) {
         if (playerPos % 20 !== 0) {
             cells[playerPos].classList.remove("player");
             playerPos -= 1;
             cells[playerPos].classList.add("player");
         }
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === "ArrowRight" && isstarted) {
         if (playerPos % 20 !== 19) {
             cells[playerPos].classList.remove("player");
             playerPos += 1;
             cells[playerPos].classList.add("player");
         }
-    } else if (event.key == "ArrowUp") {
+    } else if (event.key == "ArrowUp" && isstarted) {
         if (playerPos >= 200 && playerPos < 240) {
             if (playerPos - 20 >= 0) {
                 cells[playerPos].classList.remove("player");
@@ -29,7 +39,7 @@ document.addEventListener("keydown", function (event) {
                 cells[playerPos].classList.add("player");
             }
         }
-    } else if (event.key == "ArrowDown") {
+    } else if (event.key == "ArrowDown" && isstarted) {
         if (playerPos + 20 < 240) {
             cells[playerPos].classList.remove("player");
             playerPos += 20;
@@ -41,7 +51,7 @@ document.addEventListener("keydown", function (event) {
 // Press space to fire bullet
 document.addEventListener("keydown", function (event) {
     if (event.key === " ") {
-        if (!cooldown) {
+        if (!cooldown && isstarted) {
             var bulletPos = playerPos - 20;
             cells[bulletPos].classList.add("bullet");
             cooldown = true;
@@ -116,7 +126,7 @@ function clearAllIntervals() {
 const gameOverPopup = document.getElementById("gameOverPopup");
 const finalScoreElement = document.getElementById("finalScore");
 const playAgainButton = document.getElementById("playAgainButton");
-const stopButton = document.getElementsByClassName("stopButton");
+const stopButton = document.getElementById("stop-button");
 
 function showGameOverPopup(score) {
     finalScoreElement.innerText = score;

@@ -3,9 +3,18 @@ var highScores = [];
 
 var scoreElement = document.getElementById("score");
 
+// add event listener to start button
+startButton.addEventListener('click', startGame);
+var isstart = false;
+function startGame() {
+    // remove start button
+    isstarted = true;
+
+}
+
 function updateScore() {
     scoreElement.innerHTML = score;
-    if (alienInvaders.length === 0) {
+    if (alienInvaders.length === 0 && isstarted) {
         clearInterval(intervalId);
         var name = prompt("Congratulations, you won! Enter your name:");
         if (name) {
