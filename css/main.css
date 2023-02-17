@@ -46,9 +46,9 @@ body {
 }
 
 .parent {
-    width: 90%;
+    width: auto;
     display: flex;
-    justify-items: center;
+    justify-content: space-between;
 }
 
 .overlay {
@@ -171,9 +171,22 @@ div .bullet {
     background-size: cover;
 }
 
+.config-table {
+    float: right;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    width: auto;
+    max-height: 480px;
+    padding: 10px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 20px #ffffff;
+}
+
 .score-table {
-    float: left;
-    margin-left: auto;
+    float: right;
+    margin: 0px 10px 0px 0px;
     border: 2px solid #ffffff;
     border-radius: 20px;
     width: auto;
@@ -185,9 +198,8 @@ div .bullet {
 }
 
 .best-table {
-    float: left;
-
-    margin: auto auto auto 20px;
+    float: right;
+    margin: 0px 10px 0px 0px;
     border: 2px solid #ffffff;
     border-radius: 20px;
     width: auto;

@@ -1,4 +1,3 @@
-
 // Create 36 invaders in a 12x3 in middle of cells
 let i = 4;
 var alienInvaders = [];
@@ -69,8 +68,8 @@ intervalIDs.push(ft_invaderMoveSpeed);
 // Invader Shoot Bullet
 
 let lastInvaderBulletTime = 0;
-if (isstarted) {
-    let ft_invaderFireRate = setInterval(function () {
+let ft_invaderFireRate = setInterval(function () {
+    if (isstarted) {
         let currentTime = Date.now();
         if (currentTime - lastInvaderBulletTime >= invaderBulletCooldown) {
             let randomInvader = alienInvaders[Math.floor(Math.random() * alienInvaders.length)];
@@ -90,8 +89,8 @@ if (isstarted) {
             }, invaderBulletSpeed);
             intervalIDs.push(ft_invaderBulletMove);
         }
-    }, invaderFireRate);
-    intervalIDs.push(ft_invaderFireRate);
-}
+    }
+}, invaderFireRate);
+intervalIDs.push(ft_invaderFireRate);
 
 
