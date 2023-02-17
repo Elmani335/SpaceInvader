@@ -52,6 +52,7 @@ body {
 
 .grid {
     display: flex;
+    justify-content: center;
     float: right;
     margin-right: auto;
     border: 1px solid #ffffff;

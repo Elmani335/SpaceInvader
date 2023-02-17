@@ -21,6 +21,8 @@ function updateScore() {
             var scoreData = { name: name, score: score };
             highScores.push(scoreData);
             highScores = highScores.sort(function (a, b) {
+                showGameOverPopup(score);
+                clearAllIntervals();
                 return b.score - a.score;
             });
             if (highScores.length > 10) {
