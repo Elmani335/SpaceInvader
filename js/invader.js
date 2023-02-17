@@ -3,11 +3,11 @@ const startButton = document.getElementById('start-button');
 
 // add event listener to start button
 startButton.addEventListener('click', startGame);
-var isstart = false;
+var isstarted = false;
 function startGame() {
 
     isstarted = true;
-
+    return isstarted;
 }
 
 // Create 36 invaders in a 12x3 in middle of cells
@@ -58,6 +58,7 @@ let ft_invaderMoveSpeed = setInterval(function () {
             }
         }
     }
+
     if (isstarted === true) {
         for (let i = 0; i < alienInvaders.length; i++) {
             cells[alienInvaders[i]].classList.remove('invader');

@@ -53,7 +53,7 @@ body {
 .grid {
     display: flex;
     float: right;
-    margin-right: 10%;
+    margin-right: auto;
     border: 1px solid #ffffff;
     width: 640px;
     height: 380px;
@@ -142,10 +142,24 @@ div .bullet {
 
 .score-table {
     float: left;
-    margin-left: 20%;
+    margin-left: auto;
     border: 2px solid #ffffff;
     border-radius: 20px;
-    width: 300px;
+    width: auto;
+    max-height: 480px;
+    padding: 10px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 20px #ffffff;
+}
+
+.best-table {
+    float: left;
+
+    margin: auto auto auto 20px;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    width: auto;
     max-height: 480px;
     padding: 10px;
     overflow: auto;
