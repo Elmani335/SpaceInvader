@@ -16,3 +16,4 @@ var invaderBulletSpeed = 300;
 var invaderFireRate = 1000;
 var invaderMoveSpeed = 500;
 var invaderBulletCooldown = 2000;
+
