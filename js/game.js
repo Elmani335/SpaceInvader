@@ -40,10 +40,19 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+
+const playerBulletSound = new Audio('ressources/sounds/player_lazer.mp3');
+
+function playerPlayerBulletSound() {
+    playerPlayerBulletSound.currentTime = 0;
+    playerBulletSound.play();
+}
+
 // Press space to fire bullet
 document.addEventListener("keydown", function (event) {
     if (isstarted) {
         if (event.key === " ") {
+            playerPlayerBulletSound();
             if (!cooldown) {
                 var bulletPos = playerPos - 20;
                 cells[bulletPos].classList.add("bullet");
