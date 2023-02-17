@@ -46,6 +46,13 @@ function startGame() {
     if (emptyGrid) {
         emptyGrid.style.display = 'flex';
     }
+    // if (textPressEnter) {
+    //     const textPressEnter = document.getElementById("textPressEnter");
+    //     setInterval(() => {
+    //         textPressEnter.style.display = 'none';
+    //     }, 20); // 500ms interval for blinking
+
+    // }
     if (overlay) {
         overlay.style.display = 'flex';
     }

@@ -128,6 +128,12 @@ function showGameOverPopup(score) {
     gameOverPopup.style.display = "flex";
 }
 
+// document.addEventListener("keyup", function(event) {
+//     if (event.code === "Enter") {
+//       playAgainButton.click();
+//     }
+//   });  
+
 playAgainButton.addEventListener("click", () => {
     // Restart the game here
     gameOverPopup.style.display = "none";
