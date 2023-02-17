@@ -17,16 +17,16 @@ function startGame() {
 }
 
 // move player's ship
-if (isstarted) {
-    document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", function (event) {
+    if (isstarted) {
         cells[playerPos].classList.add("player");
-        if (event.key === "ArrowLeft") {
+        if (event.key === "ArrowLeft" && isstarted) {
             if (playerPos % 20 !== 0) {
                 cells[playerPos].classList.remove("player");
                 playerPos -= 1;
                 cells[playerPos].classList.add("player");
             }
-        } else if (event.key === "ArrowRight") {
+        } else if (event.key === "ArrowRight" && isstarted) {
             if (playerPos % 20 !== 19) {
                 cells[playerPos].classList.remove("player");
                 playerPos += 1;
@@ -48,12 +48,11 @@ if (isstarted) {
             }
         }
     }
-    )
-};
+});
 
 // Press space to fire bullet
-if (isstarted) {
-    document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", function (event) {
+    if (isstarted) {
         if (event.key === " ") {
             if (!cooldown) {
                 var bulletPos = playerPos - 20;
@@ -66,8 +65,9 @@ if (isstarted) {
             else
                 return;
         }
-    });
-}
+    }
+});
+
 
 // Move bullet
 let ft_playerBulletSpeed = setInterval(function () {
