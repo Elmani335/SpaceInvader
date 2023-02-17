@@ -6,16 +6,6 @@ let cooldown = false;
 // Create player's ship
 cells[playerPos].classList.add("player");
 
-
-// add event listener to start button
-startButton.addEventListener('click', startGame);
-var isstart = false;
-function startGame() {
-    // remove start button
-    isstarted = true;
-
-}
-
 // move player's ship
 document.addEventListener("keydown", function (event) {
     if (isstarted) {

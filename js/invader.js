@@ -1,14 +1,3 @@
-// get start button element
-const startButton = document.getElementById('start-button');
-
-// add event listener to start button
-startButton.addEventListener('click', startGame);
-var isstarted = false;
-function startGame() {
-
-    isstarted = true;
-    return isstarted;
-}
 
 // Create 36 invaders in a 12x3 in middle of cells
 let i = 4;

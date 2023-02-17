@@ -1,6 +1,5 @@
-
 body {
-    background-image: linear-gradient( 135deg, #8a1da2 10%, #400760 100%);
+    background-image: linear-gradient(135deg, #8a1da2 10%, #400760 100%);
     color: #ffffff;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -46,6 +45,41 @@ body {
     margin-bottom: 30px;
 }
 
+.parent {
+    width: 90%;
+    display: flex;
+    justify-items: center;
+}
+
+.overlay {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay p {
+    color: #fff;
+    font-size: 48px;
+}
+
+.empty-grid {
+    display: flex;
+    justify-content: center;
+    float: right;
+    margin-right: auto;
+    border: 1px solid #ffffff;
+    width: 640px;
+    height: 380px;
+    background: #000000;
+    flex-wrap: wrap;
+}
+
 .grid {
     display: flex;
     justify-content: center;
@@ -76,7 +110,7 @@ div .invader_bullet {
     background-image: url('../ressources/invader_lazer.png');
     /* transform: rotate(90deg); */
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
 }
 
 div .player {
@@ -137,28 +171,9 @@ div .bullet {
     background-size: cover;
 }
 
-.parent {
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.config-table {
-    float: right;
-    margin: 0px 10px 0px 10px;
-    border: 2px solid #ffffff;
-    border-radius: 20px;
-    width: auto;
-    max-height: 480px;
-    padding: 10px;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 0px 20px #ffffff;
-}
-
 .score-table {
-    float: right;
-    margin: 0px 10px 0px 0px;
+    float: left;
+    margin-left: auto;
     border: 2px solid #ffffff;
     border-radius: 20px;
     width: auto;
@@ -170,8 +185,9 @@ div .bullet {
 }
 
 .best-table {
-    float: right;
-    margin: 0px 10px 0px 0px;
+    float: left;
+
+    margin: auto auto auto 20px;
     border: 2px solid #ffffff;
     border-radius: 20px;
     width: auto;
@@ -221,9 +237,9 @@ div .bullet {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 999;
     display: none;
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -232,20 +248,20 @@ div .bullet {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-  }
-  
-  .popup h2 {
+}
+
+.popup h2 {
     font-size: 2em;
     margin-bottom: 10px;
-  }
-  
-  .popup p {
+}
+
+.popup p {
     font-size: 1.2em;
     margin-bottom: 20px;
     color: #000;
-  }
-  
-  .popup button {
+}
+
+.popup button {
     font-size: 1.2em;
     background-color: #00ccff;
     color: #fff;
@@ -253,5 +269,4 @@ div .bullet {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
+}
