@@ -113,6 +113,7 @@ img {
     width: 640px;
     height: 380px;
     background: #000000;
+    background-image: url('../ressources/background-game.gif');
     flex-wrap: wrap;
 }
 
