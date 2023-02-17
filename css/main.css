@@ -48,6 +48,8 @@ body {
 
 .parent {
     width: 90%;
+    display: flex;
+    justify-items: center;
 }
 
 .grid {
