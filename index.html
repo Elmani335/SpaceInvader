@@ -38,9 +38,54 @@
         
         <div class="config-table">
             <h2>game configurator</h2>
-            <ul id="configList"></ul>
+            <link rel="stylesheet" href="css/switch.css">
+            <div class="mid">
+
+            </div>
+
+            <ul id="infList">
+                <p>INFINITY</p>
+                <label class="rocker rocker-small">
+                    <input type="checkbox" id="inf">
+                    <span class="switch-left" name="infY">Yes</span>
+                    <span class="switch-right" nme="infN">No</span>
+                </label>
+
+            </ul>
+
+            <ul id="easyList">
+                <p>EASY</p>
+                <label class="rocker rocker-small">
+                    <input type="checkbox" id="easy">
+                    <span class="switch-left" name="infY">Yes</span>
+                    <span class="switch-right" nme="infN">No</span>
+                </label>
+
+            </ul>
+
+            <ul id="mediumList">
+                <p>MEDIUM</p>
+                <label class="rocker rocker-small">
+                    <input type="checkbox" id="medium">
+                    <span class="switch-left" name="infY">Yes</span>
+                    <span class="switch-right" nme="infN">No</span>
+                </label>
+
+            </ul>
+
+            <ul id="hardList">
+                <p>HARD</p>
+                <label class="rocker rocker-small">
+                    <input type="checkbox" id="hard">
+                    <span class="switch-left" name="infY">Yes</span>
+                    <span class="switch-right" nme="infN">No</span>
+                </label>
+
+            </ul>
+
             <!-- add a 2 step toggle button -->
         </div>
+
 
         <div class="score-table">
             <h2>scores Table</h2>
@@ -65,6 +110,7 @@
     </div>
 
     <script src="js/configs.js"></script>
+    <script src="js/infinity.js"></script>
     <script src="js/grid.js"></script>
     <script src="js/invader.js"></script>
     <script src="js/game.js"></script>

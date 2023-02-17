@@ -25,10 +25,11 @@ const startButton = document.getElementById('start-button');
 
 // Click button "Start" to start the game
 startButton.addEventListener('click', startGame);
-
+const sound = new Audio('ressources/bg-sound.mp3');
 // Press enter to start the game
 window.addEventListener('keydown', function (event) {
     if (event.key === "Enter") {
+        sound.play();
         startGame();
     }
 });
