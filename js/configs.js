@@ -1,4 +1,4 @@
-// Game's Config
+// Game's Default Config
 
 var updateTick = 100;
 
