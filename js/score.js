@@ -14,7 +14,7 @@ function startGame() {
 
 function updateScore() {
     scoreElement.innerHTML = score;
-    if (alienInvaders.length === 0 && isstarted) {
+    if (alienInvaders.length === 0 && isstarted === true) {
         clearInterval(intervalId);
         var name = prompt("Congratulations, you won! Enter your name:");
         if (name) {

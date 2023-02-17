@@ -17,52 +17,57 @@ function startGame() {
 }
 
 // move player's ship
-document.addEventListener("keydown", function (event) {
-    cells[playerPos].classList.add("player");
-    if (event.key === "ArrowLeft" && isstarted) {
-        if (playerPos % 20 !== 0) {
-            cells[playerPos].classList.remove("player");
-            playerPos -= 1;
-            cells[playerPos].classList.add("player");
-        }
-    } else if (event.key === "ArrowRight" && isstarted) {
-        if (playerPos % 20 !== 19) {
-            cells[playerPos].classList.remove("player");
-            playerPos += 1;
-            cells[playerPos].classList.add("player");
-        }
-    } else if (event.key == "ArrowUp" && isstarted) {
-        if (playerPos >= 200 && playerPos < 240) {
-            if (playerPos - 20 >= 0) {
+if (isstarted) {
+    document.addEventListener("keydown", function (event) {
+        cells[playerPos].classList.add("player");
+        if (event.key === "ArrowLeft") {
+            if (playerPos % 20 !== 0) {
                 cells[playerPos].classList.remove("player");
-                playerPos -= 20;
+                playerPos -= 1;
+                cells[playerPos].classList.add("player");
+            }
+        } else if (event.key === "ArrowRight") {
+            if (playerPos % 20 !== 19) {
+                cells[playerPos].classList.remove("player");
+                playerPos += 1;
+                cells[playerPos].classList.add("player");
+            }
+        } else if (event.key == "ArrowUp") {
+            if (playerPos >= 200 && playerPos < 240) {
+                if (playerPos - 20 >= 0) {
+                    cells[playerPos].classList.remove("player");
+                    playerPos -= 20;
+                    cells[playerPos].classList.add("player");
+                }
+            }
+        } else if (event.key == "ArrowDown") {
+            if (playerPos + 20 < 240) {
+                cells[playerPos].classList.remove("player");
+                playerPos += 20;
                 cells[playerPos].classList.add("player");
             }
         }
-    } else if (event.key == "ArrowDown" && isstarted) {
-        if (playerPos + 20 < 240) {
-            cells[playerPos].classList.remove("player");
-            playerPos += 20;
-            cells[playerPos].classList.add("player");
-        }
     }
-});
+    )
+};
 
 // Press space to fire bullet
-document.addEventListener("keydown", function (event) {
-    if (event.key === " ") {
-        if (!cooldown && isstarted) {
-            var bulletPos = playerPos - 20;
-            cells[bulletPos].classList.add("bullet");
-            cooldown = true;
-            setTimeout(function () {
-                cooldown = false;
-            }, playerFireRate);
+if (isstarted) {
+    document.addEventListener("keydown", function (event) {
+        if (event.key === " ") {
+            if (!cooldown) {
+                var bulletPos = playerPos - 20;
+                cells[bulletPos].classList.add("bullet");
+                cooldown = true;
+                setTimeout(function () {
+                    cooldown = false;
+                }, playerFireRate);
+            }
+            else
+                return;
         }
-        else
-            return;
-    }
-});
+    });
+}
 
 // Move bullet
 let ft_playerBulletSpeed = setInterval(function () {
